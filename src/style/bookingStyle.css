@@ -1,0 +1,184 @@
+h1, p {
+  font-family: Lato;
+}
+
+.container{
+  padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.bookingSumContainer{
+  border: 2px solid #394DFF;
+  width: 300px;
+  border-radius: 10px;
+  min-height: 250px;
+  max-height: 400px;
+  position: sticky;
+  top: 30px;
+  padding: 15px;
+}
+.BookingPContainer{
+  background-color: RGBA(46,62,212,.05);
+}
+.bookingContainer{
+  border: 2px solid #394DFF;
+    width: fit-content;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+.minServiceBox{
+  background: #FFFFFF;
+  border: 2px solid #394DFF;
+  border-radius: 10px;
+  min-width: 180px;
+  max-width: 200px;
+  min-height: 300px;
+  display: grid;
+  align-content: stretch;
+  justify-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+}
+.minServiceBox:hover{
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+.minServiceBox-unselect{
+  background: #FFFFFF;
+  border: 2px solid grey;
+  border-radius: 10px;
+  min-width: 180px;
+  max-width: 200px;
+  min-height: 300px;
+  display: grid;
+  align-content: stretch;
+  justify-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+}
+.miniServiceButton{
+  color: white;
+  height: 30px;
+  display: flex;
+  width: 150px;
+  align-self: center;
+  justify-self: center;
+  background: #394DFF;
+  border: 1px solid #2B3BCC;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.miniServiceButton-unselect{
+  color: white;
+  height: 30px;
+  display: flex;
+  width: 150px;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  background: grey;
+  border: 1px solid rgb(90, 90, 90);
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.miniServiceTitle{
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+  height: fit-content;
+}
+.miniServiceBody{
+  font-size: 16px;
+  text-align: center;
+}
+.servicesSection{
+  display: flex;
+}
+.line{
+  border-bottom: 2px solid #394DFF;
+  width: -webkit-fill-available;
+  height: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+  .AreaSelect{
+    border: 2px solid #394DFF;
+    border-radius: 5px;
+    height: 45px;
+    width: -webkit-fill-available;
+    min-width: 300px;
+    font-size: 18px;
+  }
+  .FeqButton-unselect{
+    border: 1.5px solid rgb(90, 90, 90);
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+    height: 40px;
+    width: 250px;
+    font-size: 18px;
+  }
+  .FeqButton-unselect:hover{
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  }
+
+  .FeqButton{
+    border: 1.5px solid #394DFF;
+    border-radius: 5px;
+    background-color: #394DFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    height: 40px;
+    width: 250px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+  }
+  .feqButContainer{
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .check-UnSelected{
+    width:25px; 
+    height:25px;
+    border: 1.5px solid #394DFF;
+  }
+  .check-Selected{
+    width:25px; 
+    height:25px;
+    border: 1.5px solid #394DFF;
+    background-color: #394DFF;
+    color: white;
+  }
+  .InputDetails{
+    margin:5px;
+    border: 2px solid #394DFF;
+    padding: 2px;
+    height: 30px;
+    width: 400px;
+    border-radius: 5px;
+  }
+  .bookingItems{
+    display: flex;
+    justify-items: space-between;
+    flex-direction: column;
+    font-size: 22px;
+  }
+
+  
