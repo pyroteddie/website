@@ -345,7 +345,7 @@ const storage = getStorage();
 
           <div className='line'></div>
 
-          <div >
+          <form action="/checkout" method="POST">
             <h2>Your Details</h2>
               <div style={{display:'flex', flexDirection:'row',justifyContent:'center'}}>
                 <div style={{display:'flex', flexDirection:'column',padding:'15px'}}>
@@ -361,9 +361,11 @@ const storage = getStorage();
                   <input id='UserPCode' placeholder='Post code' className='InputDetails' onChange={(e) => ClientDetails['Address']['PostCode'] = e.target.value} />
                 </div>
               </div>
-          </div>
-          <button className='BookNowButton' onClick={() => CreateInvoice(CleanDisplay,reqId,rooms,bathRooms,startDate,customItem,TotalCostService)}>Book Now</button>
-         
+              <button type="submit" className='BookNowButton'>
+                  Book Now
+                </button>
+              </form>
+          
         </div>
         <div className='bookingSumContainer'>
         <h3 style={{fontSize:'24px'}}>Your Booking Summary</h3>
@@ -381,7 +383,8 @@ const storage = getStorage();
       </div>
     );
     
-    // 
+    // <button className='BookNowButton' onClick={() => CreateInvoice(CleanDisplay,reqId,rooms,bathRooms,startDate,customItem,TotalCostService)}>Book Now</button>
+          
   function editcustomItems(Checked,Value){
 
     if(Checked === true){

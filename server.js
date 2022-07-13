@@ -5,14 +5,13 @@ app.use(express.static('public'));
 
 const YOUR_DOMAIN = 'http://localhost:4242';
 
-app.post('/create-checkout-session', async (req, res) => {
+app.post('/checkout', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
         price_data: {
             currency:"AUD",
-            product:"",
-            unit_amount_decimal:"",
+            unit_amount_decimal:30.00,
           },
           quantity: 1,
       },
