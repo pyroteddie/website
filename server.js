@@ -1,24 +1,32 @@
-const stripe = require('stripe')('sk_test_wsFx86XDJWwmE4dMskBgJYrt');
+const stripe = require('stripe')('sk_test_51LJaHJIvndITSaVYpSPnqPxT69FtM0FG5OY8X2pirE8iFjBFPB4Zefm6Zplb94IcvQfPtTOvNGQnBSHUqILZb6p600EEcSzjUB');
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
 
-const YOUR_DOMAIN = 'http://localhost:4242';
+const YOUR_DOMAIN = 'http://localhost:3000';
+
 
 app.post('/checkout', async (req, res) => {
+ 
+  console.log(res);
+  
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
         price_data: {
-            currency:"AUD",
-            unit_amount_decimal:30.00,
+            product_data:{
+              name:"General Clean",
+              description:"Light CLean",
+            },
+            currency:"aud",
+            unit_amount_decimal:3000.00,
           },
           quantity: 1,
       },
     ],
     mode: 'payment',
     success_url: `${YOUR_DOMAIN}?success=true`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    cancel_url: `${YOUR_DOMAIN}/booking`,
   });
 
   res.redirect(303, session.url);
