@@ -5,21 +5,24 @@ app.use(express.static('public'));
 
 const YOUR_DOMAIN = 'http://localhost:3000';
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/checkout', async (req, res) => {
  
-  console.log(res);
-  
+  console.log(req.body.ServicePrice);
+
+  var cleanPrice = Number(req.body.ServicePrice) * 100
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
         price_data: {
             product_data:{
-              name:"General Clean",
-              description:"Light CLean",
+              name:OrderRef,
+              description: req.body.Cleantype + " - " + req.body.CleanDetails,
             },
             currency:"aud",
-            unit_amount_decimal:3000.00,
+            unit_amount_decimal:cleanPrice,
           },
           quantity: 1,
       },

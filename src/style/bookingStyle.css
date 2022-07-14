@@ -34,7 +34,7 @@ h1, p {
   background: #FFFFFF;
   border: 2px solid #394DFF;
   border-radius: 10px;
-  min-width: 180px;
+  min-width: 90px;
   max-width: 200px;
   min-height: 300px;
   display: grid;
@@ -51,7 +51,7 @@ h1, p {
   background: #FFFFFF;
   border: 2px solid grey;
   border-radius: 10px;
-  min-width: 180px;
+  min-width: 90px;
   max-width: 200px;
   min-height: 300px;
   display: grid;
@@ -65,7 +65,9 @@ h1, p {
   color: white;
   height: 30px;
   display: flex;
-  width: 150px;
+  width: -webkit-fill-available;
+  margin-right: 5px;
+  margin-left: 5px;
   align-self: center;
   justify-self: center;
   background: #394DFF;
@@ -83,7 +85,9 @@ h1, p {
   color: white;
   height: 30px;
   display: flex;
-  width: 150px;
+  width: -webkit-fill-available;
+  margin-right: 5px;
+  margin-left: 5px;
   text-align: center;
   align-self: center;
   justify-self: center;
@@ -130,7 +134,9 @@ h1, p {
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
     height: 40px;
-    width: 250px;
+    width: -webkit-fill-available;
+    margin-right: 5px;
+    margin-left: 5px;
     font-size: 18px;
   }
   .FeqButton-unselect:hover{
@@ -143,7 +149,9 @@ h1, p {
     background-color: #394DFF;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     height: 40px;
-    width: 250px;
+    width: -webkit-fill-available;
+    margin-right: 5px;
+    margin-left: 5px;
     font-size: 18px;
     color: white;
     font-weight: 700;

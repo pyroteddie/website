@@ -37,7 +37,7 @@ const storage = getStorage();
     let CTDeepCleanItems = [];
     let CTGenCleanItems = [];
     let CTBondCleanItems  = [];
-    
+    var CleanInfoItems;
 
     export default function BookingSection() {
     
@@ -67,7 +67,7 @@ const storage = getStorage();
     const BRItems = ref(database, 'Information/BaseRates/');
     onValue(BRItems, (snapshot) => { BaseRates = (snapshot.val())});
 
-   
+    var OrderRefNumber = Math.random().toString(36).slice(2);
     const CTGenCleanDic = ref(database, 'Information/CleanTypes/GeneralClean/')
     const CTDeepCleanDic = ref(database, 'Information/CleanTypes/DeepClean/')
     const CTBondCleanDic = ref(database, 'Information/CleanTypes/BondClean/')
@@ -86,6 +86,7 @@ const storage = getStorage();
     onValue(KitItemsList, (snapshot) => { KitchenItems = (snapshot.val())});
     onValue(BedItemsList, (snapshot) => { BedroomItems = (snapshot.val())});
     onValue(OtherItemsList, (snapshot) => { OtherItems = (snapshot.val())});
+
     useEffect(() => {
       
       console.log(KitchenItems)
@@ -130,7 +131,23 @@ const storage = getStorage();
         break; 
         
       }
+      
+        switch(CleanDisplay){
+          case 'General':
+            CleanInfoItems = CTGenCleanItems;
+          
+          break;
+          case 'Deep':
+            CleanInfoItems = CTDeepCleanItems;
+          break;
+          case 'Bond':
+            CleanInfoItems = CTBondCleanItems;
+          break;
+          case 'Custom Clean':
+            CleanInfoItems = customItem;
+          break;
 
+        }
       switch(CleanDisplay){
         case 'General':
           var base = Number(BaseRates['GeneralClean']['Base']);
@@ -349,7 +366,7 @@ const storage = getStorage();
             <h2>Your Details</h2>
               <div style={{display:'flex', flexDirection:'row',justifyContent:'center'}}>
                 <div style={{display:'flex', flexDirection:'column',padding:'15px'}}>
-                  <input id='UserFName' placeholder='First Name' className='InputDetails' type="text" onChange={(e) => ClientDetails['FirstName'] = e.target.value}/>
+                  <input name='ClientName' id='UserFName' placeholder='First Name' className='InputDetails' type="text" onChange={(e) => ClientDetails['FirstName'] = e.target.value}/>
                   <input id='UserEName' placeholder='Email' className='InputDetails' type="email" onChange={(e) => ClientDetails['Email'] = e.target.value} />
                   <input id='UserAdd' placeholder='Address' className='InputDetails' type="text" onChange={(e) => ClientDetails['Address']["Line1"] = e.target.value} />
                   <input id='UserLState' placeholder='State' className='InputDetails' type="text" onChange={(e) => ClientDetails['Address']['State'] = e.target.value}/>
@@ -359,27 +376,33 @@ const storage = getStorage();
                   <input id='UserPhone' placeholder='Phone' className='InputDetails' type="tel" onChange={(e) => ClientDetails['Phone'] = e.target.value}/>
                   <input id='UserSub' placeholder='Suburb' className='InputDetails' value={suburb}  onChange={(e) => ClientDetails['Address']["Suburb"] = suburb}/>
                   <input id='UserPCode' placeholder='Post code' className='InputDetails' onChange={(e) => ClientDetails['Address']['PostCode'] = e.target.value} />
+                  <input name='OrderRef' value={OrderRefNumber} style={{display:"none"}} />
+                  <input name='ServicePrice' value={TotalCostService} style={{display:"none"}}/>
+                  <input name='Cleantype' value={CleanDisplay} style={{display:"none"}}/>
+                  <input name='CleanDetails' value={CleanInfoItems} style={{display:"none"}} />
                 </div>
               </div>
-              <button type="submit" className='BookNowButton'>
+              <button type="submit" className='BookNowButton' onClick={() => CreateInvoice(CleanDisplay,reqId,rooms,bathRooms,startDate,customItem,TotalCostService)}>
                   Book Now
                 </button>
               </form>
           
         </div>
+
         <div className='bookingSumContainer'>
-        <h3 style={{fontSize:'24px'}}>Your Booking Summary</h3>
-          <div className='bookingItems'>
-           <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Clean Type</a><a>{CleanDisplay}</a></div>
-           <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Frequency</a><a>{reqId}</a></div>
-           <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Rooms</a><a>{rooms}</a></div>
-           <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Bathrooms</a><a>{bathRooms}</a></div>
-           <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Start Date</a><a>{startDate}</a></div>
-           <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Custom Add-ons</a><a>${customItemCost}</a></div>
-           <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Total Price Per Service</a><a>${(customItemCost +(customItemCost * disPrice)) + cost}</a></div>
-           <div style={{display:'flex', flexDirection:'row'}}><p>* Includes GST tax</p></div>
-          </div>
+          <h3 style={{fontSize:'24px'}}>Your Booking Summary</h3>
+            <div className='bookingItems'>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Clean Type</a><a>{CleanDisplay}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Frequency</a><a>{reqId}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Rooms</a><a>{rooms}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Bathrooms</a><a>{bathRooms}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Start Date</a><a>{startDate}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Custom Add-ons</a><a>${customItemCost}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Total Price Per Service</a><a>${(customItemCost +(customItemCost * disPrice)) + cost}</a></div>
+            <div style={{display:'flex', flexDirection:'row'}}><p>* Includes GST tax</p></div>
+            </div>
         </div>
+
       </div>
     );
     
@@ -452,7 +475,7 @@ const storage = getStorage();
  async function CreateInvoice(CleanType, Frequency, Rooms, Bathroom, StartDate, CustomItems, ServiceCost){
   var checkList = 0;
 
-
+ 
 
   if(!isBlank(ClientDetails['FirstName'])){
     checkList++;
@@ -484,14 +507,6 @@ const storage = getStorage();
   console.log(ClientDetails)
 
 if(checkList <= 8){
-
-  const stripe = require('stripe')('sk_test_51LJaHJIvndITSaVYpSPnqPxT69FtM0FG5OY8X2pirE8iFjBFPB4Zefm6Zplb94IcvQfPtTOvNGQnBSHUqILZb6p600EEcSzjUB');
-
-const paymentIntent = await stripe.paymentIntents.create({
-  amount: 2000,
-  currency: 'aud',
-  payment_method_types: ['card'],
-});
 
    var CleanInfoItems;
    switch(CleanType){
