@@ -3,20 +3,21 @@ h1, p {
 }
 
 .container{
-  padding: 50px;
-    display: flex;
-    justify-content: space-evenly;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
 
 }
 .bookingSumContainer{
   border: 2px solid #394DFF;
-  width: 300px;
+  max-width: 300px;
   border-radius: 10px;
   min-height: 250px;
-  max-height: 400px;
+  max-height: 450px;
   position: sticky;
   top: 30px;
   padding: 15px;
+  margin-left: 20px;
 }
 .BookingPContainer{
   background-color: RGBA(46,62,212,.05);
@@ -34,8 +35,8 @@ h1, p {
   background: #FFFFFF;
   border: 2px solid #394DFF;
   border-radius: 10px;
-  min-width: 90px;
-  max-width: 200px;
+  min-width: 150px;
+  max-width: 150px;
   min-height: 300px;
   display: grid;
   align-content: stretch;
@@ -51,8 +52,8 @@ h1, p {
   background: #FFFFFF;
   border: 2px solid grey;
   border-radius: 10px;
-  min-width: 90px;
-  max-width: 200px;
+  min-width: 150px;
+  max-width: 150px;
   min-height: 300px;
   display: grid;
   align-content: stretch;
@@ -190,3 +191,167 @@ h1, p {
   }
 
   
+  @media screen and (max-width: 800px) {
+    h1, p {
+      font-family: Lato;
+    }
+    
+    .container{
+      padding: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+    
+    }
+    .bookingItems{
+      display: flex;
+      justify-items: space-between;
+      flex-direction: column;
+      font-size: 16px;
+    }
+    .bookingSumContainer{
+      max-width: 300px;
+      border-radius: 10px;
+      min-height: 250px;
+      max-height: 450px;
+      position: sticky;
+      top: 30px;
+      padding: 15px;
+      margin-left: 20px;
+    }
+    .bookingContainer{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: space-evenly;
+    }
+    .minServiceBox{
+      min-width: 140px;
+      max-width: 140px;
+      min-height: 250px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 5px;
+      margin: 7px;
+    }
+    .minServiceBox:hover{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    }
+    .minServiceBox-unselect{
+      min-width: 140px;
+      max-width: 140px;
+      min-height: 250px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 5px;
+      margin: 7px;
+    }
+    .miniServiceButton{
+      height: 30px;
+      width: -webkit-fill-available;
+      margin-right: 5px;
+      margin-left: 5px;
+      align-self: center;
+      justify-self: center;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .miniServiceButton-unselect{
+      height: 30px;
+      display: flex;
+      width: -webkit-fill-available;
+      margin-right: 5px;
+      margin-left: 5px;
+      text-align: center;
+      align-self: center;
+      justify-self: center;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 24px;
+      justify-content: center;
+      align-items: center;
+    }
+    .miniServiceTitle{
+      font-size: 16px;
+      font-weight: 900;
+      text-align: center;
+      height: fit-content;
+    }
+    .miniServiceBody{
+      font-size: 12px;
+      text-align: center;
+    }
+    .servicesSection{
+      display: flex;
+    }
+    .line{
+      width: -webkit-fill-available;
+      height: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+      .AreaSelect{
+
+        height: 45px;
+        width: -webkit-fill-available;
+        min-width: 150px;
+        font-size: 18px;
+      }
+      .FeqButton-unselect{
+        height: 40px;
+        width: -webkit-fill-available;
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 18px;
+      }
+      .FeqButton-unselect:hover{
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+      }
+    
+      .FeqButton{
+        height: 40px;
+        width: -webkit-fill-available;
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 18px;
+       
+        font-weight: 700;
+      }
+      .feqButContainer{
+        width: -webkit-fill-available;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .check-UnSelected{
+        width:25px; 
+        height:25px;
+       
+      }
+      .check-Selected{
+        width:25px; 
+        height:25px;
+        
+      }
+      .InputDetails{
+        margin:5px;
+        padding: 2px;
+        height: 30px;
+        width: 270px;
+        border-radius: 5px;
+      }
+     
+    
+  }

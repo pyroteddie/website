@@ -278,3 +278,8 @@ section{
     width: 500px;
     background-color: RGBA(255,255,255,.45);
   }
+
+  @media screen and (max-width: 800px) {
+
+    
+  }

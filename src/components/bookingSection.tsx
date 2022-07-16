@@ -392,13 +392,13 @@ const storage = getStorage();
         <div className='bookingSumContainer'>
           <h3 style={{fontSize:'24px'}}>Your Booking Summary</h3>
             <div className='bookingItems'>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Clean Type</a><a>{CleanDisplay}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Frequency</a><a>{reqId}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Rooms</a><a>{rooms}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Bathrooms</a><a>{bathRooms}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Start Date</a><a>{startDate}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Custom Add-ons</a><a>${customItemCost}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Total Price Per Service</a><a>${(customItemCost +(customItemCost * disPrice)) + cost}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Clean Type: </a><a>{CleanDisplay}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Frequency: </a><a>{reqId}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Rooms: </a><a>{rooms}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Bathrooms: </a><a>{bathRooms}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Start Date: </a><a>{startDate}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Custom Add-ons: </a><a>${customItemCost}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a>Total Price Per Service: </a><a>${(customItemCost +(customItemCost * disPrice)) + cost}</a></div>
             <div style={{display:'flex', flexDirection:'row'}}><p>* Includes GST tax</p></div>
             </div>
         </div>
