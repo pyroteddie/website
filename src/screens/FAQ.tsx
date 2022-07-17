@@ -2,7 +2,7 @@ import * as React from 'react';
 import '../style.css';
 
 
-export default function ServicesScreen() {
+export default function FAQScreen() {
     return (
       <div>
         <h1>Services</h1>

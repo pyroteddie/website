@@ -12,9 +12,9 @@ export default function Header() {
           <div className='MenuBar'>
                   <div className='MenuLinks'>
                     <a className='Link'><Link style={{color:'black', textDecoration: "none"}} to="/">Home</Link></a>
-                    <a className='Link'><Link style={{color:'black', textDecoration: "none"}} to="Services">Services</Link></a>
                     <a className='Link'><Link style={{color:'black', textDecoration: "none"}} to="Booking">Pricing & Booking</Link></a>
-                    <a className='Link'><Link style={{color:'black', textDecoration: "none"}} to="Info">How Does It Work</Link></a>
+                    <a className='Link'><Link style={{color:'black', textDecoration: "none"}} to="FAQ">FAQ</Link></a>
+                    
                   </div>
           </div>
         </div>
