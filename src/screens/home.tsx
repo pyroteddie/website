@@ -25,8 +25,8 @@ export default function HomeScreen() {
         <ServiceSection />
         </section>
         <section >
+        <h1 className='HeadingTitle'>Why we are your best choice</h1>
           <div className='Sec2_Par'>
-        <h1>Why we are your best choice</h1>
         <p>TSW Property Solutions is a family-run firm that was established in 2022. We make every effort to deliver the best service and customer care possible.
           Our experienced expert cleaners are now serving Cairns and numerous surrounding areas.
           We provide one-time cleanings, weekly cleanings, and bond cleanings. We also help NDIS recipients and veterans.We provide one-time cleanings, weekly cleanings, and bond cleanings. We have the knowledge and are delighted to assist you.</p>
@@ -34,11 +34,13 @@ export default function HomeScreen() {
         </section>
 
         <section>
-          <h1>How Does it Work?</h1>
+          <h1 className='HeadingTitle'>How Does it Work?</h1>
           <div>
             <p></p>
           </div>
         </section>
+
+        
         <section className='Footer'> 
         <a>A subsidiary of TSW Security Solutions</a>
         </section>

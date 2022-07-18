@@ -278,6 +278,28 @@ section{
     width: 500px;
     background-color: RGBA(255,255,255,.45);
   }
+.HeadingTitle{
+  background-color:#394DFF;
+  color: #FFFFFF;
+  border:2px solid #2B3BCC;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  padding-top: 10px;
+  padding-bottom:10px;
+  width:-webkit-fill-available;
+  padding-left: 250px;
+}
+.FeqCon{
+ display:grid;
+ justify-items: flex-start;
+}
+.FeqTit{
+font-size: 18px;
+font-weight: 700;
+}
+.FeqAns{
+font-size: 16px;
+}
+
   @media screen and (max-width: 699px) {
     h1, p {
       font-family: Lato;
