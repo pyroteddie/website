@@ -32,8 +32,15 @@ export default function HomeScreen() {
           We provide one-time cleanings, weekly cleanings, and bond cleanings. We also help NDIS recipients and veterans.We provide one-time cleanings, weekly cleanings, and bond cleanings. We have the knowledge and are delighted to assist you.</p>
           </div>
         </section>
+
+        <section>
+          <h1>How Does it Work?</h1>
+          <div>
+            <p></p>
+          </div>
+        </section>
         <section className='Footer'> 
-        
+        <a>A subsidiary of TSW Security Solutions</a>
         </section>
       </div>
     );

@@ -8,13 +8,13 @@ h1, p {
 }
 
 .Sec2_Par{
+  width: 750px;
+  justify-self: center;
+  align-self: center;
   display: flex;
-    flex-direction: column;
-    justify-self: start;
-    font-size: 20px;
-    margin-left: 20px;
-    width: 40%;
-    white-space: break-spaces;
+  flex-direction: column;
+  text-align: center;
+  font-size: 20px;
 }
 .MenuBar{
   display: flex;
@@ -293,14 +293,13 @@ section{
       padding: 10px;
     }
     .Sec2_Par{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
       display: flex;
-        flex-direction: column;
-        justify-self: start;
-        font-size: 20px;
-        margin-left: 20px;
-        width: -webkit-fill-available;
-        white-space: break-spaces;
-        padding: 10px;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
     }
     .HeaderContainer{
       display: flex;
@@ -572,17 +571,17 @@ section{
   
     
     .Sec2_Par{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
       display: flex;
-        flex-direction: column;
-        justify-self: start;
-        font-size: 20px;
-        margin-left: 20px;
-        width: 40%;
-        white-space: break-spaces;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
     }
     .HeaderContainer{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: space-between;
       align-content: space-between;
     }
@@ -591,8 +590,8 @@ section{
       flex-direction: row;
       align-items: center;
       width: -webkit-fill-available;
-      justify-content: center;
-      height: 100px;
+      justify-content: flex-end;
+      height: 170px;
       padding-right: 0px;
     }
     .MenuName{
@@ -805,7 +804,7 @@ section{
         display: grid;
         align-content: stretch;
         justify-items: center;
-        padding: 15px;
+        padding: 5px 6px;
         margin: 15px;
         width:-webkit-fill-available;
     }
@@ -858,17 +857,17 @@ h1, p {
   
     
     .Sec2_Par{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
       display: flex;
-        flex-direction: column;
-        justify-self: start;
-        font-size: 20px;
-        margin-left: 20px;
-        width: 40%;
-        white-space: break-spaces;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
     }
     .HeaderContainer{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: space-between;
       align-content: space-between;
     }
@@ -877,9 +876,9 @@ h1, p {
       flex-direction: row;
       align-items: center;
       width: -webkit-fill-available;
-      justify-content: center;
-      height: 100px;
-      padding-right: 0px;
+      justify-content: flex-end;
+      height: 170px;
+      padding-right: 100px;
     }
     .MenuName{
       display: flex;
@@ -1091,7 +1090,7 @@ h1, p {
         display: grid;
         align-content: stretch;
         justify-items: center;
-        padding: 15px;
+        padding: 5px 6px;
         margin: 15px;
         width:-webkit-fill-available;
     }
@@ -1131,7 +1130,7 @@ h1, p {
         white-space: pre-wrap;
       }
       .PostcodeSearch{
-        padding: 10px 10px 10px 250px;
+        padding: 10px 10px 10px 150px;
         width: 500px;
         background-color: RGBA(255,255,255,.45);
       }
