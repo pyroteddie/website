@@ -225,7 +225,7 @@ const storage = getStorage();
           <div className='line'></div>
 
           <div style={active && id==="1" ? {display:'block'}:{display:'none'}} >
-            <h2>How often will the cleaner be required</h2>
+            <h2>What clean type do you require</h2>
             <div className='feqButContainer'>
             <button className={cleanTypeActive && cleanType==="General" ? 'FeqButton':'FeqButton-unselect'} onClick={() => SetCleanActive('General')} >General Clean</button>
             <button className={cleanTypeActive && cleanType==="Deep" ? 'FeqButton':'FeqButton-unselect'} onClick={() => SetCleanActive('Deep')} >Deep Clean</button>
@@ -315,31 +315,32 @@ const storage = getStorage();
 
           <div >
             <h2>Custom Add On's</h2>
+
               <div style={{display:'flex', flexDirection:'row', justifyContent:'Space-evenly', alignItems:'flex-start'}}>
                 <div style={{display:'flex', alignItems:'center',flexDirection:'column',width:'-webkit-fill-available',margin:'10px'}}>
                   <h3 >Kitchen</h3>
                   {KitchenItems && KitchenItems.map(item => ( 
                     <div style={{display:'flex', alignItems:'center',width:'-webkit-fill-available',justifyContent: "space-between"}}>
                       <label className='customCheckLabels' >{item['Name']}</label>
+                      <a>{item['TaskType']}</a>
                       <input type='checkbox' className='customChecks' value={item['Price']} onChange={(e => editcustomItems(e.target.checked,{Name:"Kitchen - " +item['Name'],Price:item['Price']}) )}/>
                     </div>
                   ))}
-                  
-
-                 
                 </div>
+
                 <div style={{display:'flex', alignItems:'center',flexDirection:'column',width:'-webkit-fill-available',margin:'10px'}}>
                   <h3 >Bedroom</h3>
                   {BedroomItems && BedroomItems.map(item => ( 
                     <div style={{display:'flex', alignItems:'center',width:'-webkit-fill-available',justifyContent: "space-between"}}>
                       <label className='customCheckLabels'>{item['Name']}</label>
+                      
                       <input type='checkbox' className='customChecks' value={item['Price']} onChange={(e => editcustomItems(e.target.checked,{Name:"Bedroom - " + item['Name'],Price:item['Price']}) )}/>
                     </div>
                   ))}
                 </div>
+
                 <div style={{display:'flex', alignItems:'center',flexDirection:'column',width:'-webkit-fill-available',margin:'10px'}}>
                   <h3 >Other</h3>
-
                   {OtherItems && OtherItems.map(item => ( 
                     <div style={{display:'flex', alignItems:'center',width:'-webkit-fill-available',justifyContent: "space-between"}}>
                       <label className='customCheckLabels'>{item['Name']}</label>
@@ -398,7 +399,7 @@ const storage = getStorage();
             <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Bathrooms: </a><a className='BookSumLineItem'>{bathRooms}</a></div>
             <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Start Date: </a><a className='BookSumLineItem'>{startDate}</a></div>
             <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Custom Add-ons: </a><a className='BookSumLineItem'>${customItemCost}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Price Per-Service: </a><a className='BookSumLineItem'>${(customItemCost +(customItemCost * disPrice)) + cost}</a></div>
+            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Price Per-Service: </a><a className='BookSumLineItem'>${((customItemCost +(customItemCost * disPrice)) + cost).toFixed(2)}</a></div>
             <div style={{display:'flex', flexDirection:'row'}}><p>* Includes GST tax</p></div>
             </div>
         </div>
