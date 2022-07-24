@@ -1,0 +1,1159 @@
+h1, p {
+  font-family: Lato;
+}
+.HeaderContainer{
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.Sec2_Par{
+  width: 750px;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 20px;
+}
+.MenuBar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: -webkit-fill-available;
+  justify-content: right;
+  height: 150px;
+  padding-right: 100px;
+}
+.MenuName{
+  display: flex;
+  justify-self: start;
+  font-size: 24px;
+  margin-left: 20px;
+}
+.MenuLinks{
+  display: flex;
+  justify-self: end;
+  font-size: 19px;
+  text-decoration: none;
+}
+.HeaderBarImg{
+  display:flex;
+  justify-content: left;
+  padding-left: 100px;
+}
+.Link{
+  margin: 5px;
+  text-decoration: none;
+  font-size: 22px;
+}
+.Link:hover{
+  margin: 5px;
+  text-decoration: underline solid #394DFF;
+  font-size: 22px;
+}
+
+.Sec_1{
+  width: 750px;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 20px;
+}
+
+.ServiceItem_1, .ServiceItem_2, .ServiceItem_3{
+  display: flex;
+  background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FAssetPro.png?alt=media&token=e7c25339-2ae7-4f5e-bf3d-347c30246521) no-repeat left center;
+  height: 250px;
+  width: 250px;
+  align-items: center;
+  box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px;
+  margin: 5px;
+}
+.ServiceItem_2{
+  background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FDrug.png?alt=media&token=2314e038-280d-43ed-a847-d8b5ae62fdfa) no-repeat left center;
+ 
+}
+.ServiceItem_3{
+  background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FStatic.png?alt=media&token=e9fc2340-fbd1-48ad-8b74-df2288cfea16) no-repeat left center;
+
+}
+
+.ServiceLabel{
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+  display: block;
+  width: -webkit-fill-available;
+  text-align-last: center;
+  padding: 20px;
+}
+.ServiceLabel:hover{
+  color: white;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-thickness: 2.5px;
+}
+
+.ServicesSection{
+  background-color: rgba(0, 79, 136, .05);
+  border: 1.5px solid rgba(0, 55, 95, .25);
+  min-height: 350px;
+  display: flex;
+flex-direction: row;
+}
+
+
+body{ padding:0px;margin: 0px;}
+
+section{
+  min-height: 240px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+
+}
+.Footer{
+  background-image: linear-gradient(135deg, rgb(1,136,211) 78%, rgb(0,79,136)78%);
+}
+.GallerySection{
+  background-color: rgba(196, 196, 196, 1);
+  border: 1.5px solid rgba(0, 55, 95, .25);
+}
+
+.minServiceBox{
+  background: #FFFFFF;
+  border: 2px solid #394DFF;
+  border-radius: 10px;
+  min-width: 90px;
+  max-width: 300px;
+  min-height: 450px;
+  display: grid;
+  align-content: stretch;
+  justify-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+}
+.minServiceBox:hover{
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+.minServiceBox-unselect{
+  background: #FFFFFF;
+  border: 2px solid grey;
+  border-radius: 10px;
+  min-width: 90px;
+  max-width: 300px;
+  min-height: 450px;
+  display: grid;
+  align-content: stretch;
+  justify-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+}
+.miniServiceButton{
+  color: white;
+  height: 30px;
+  display: flex;
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
+  background: #394DFF;
+  border: 1px solid #2B3BCC;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+.miniServiceButton-unselect{
+  color: white;
+  height: 30px;
+  display: flex;
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
+  background: grey;
+  border: 1px solid rgb(90, 90, 90);
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+.miniServiceButton:hover{
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+ 
+}
+.miniServiceTitle{
+  font-size: 34px;
+  font-weight: 900;
+  text-align: center;
+  height: fit-content;
+}
+.miniServiceBody{
+  font-size: 20px;
+  text-align: center;
+}
+.servicesSection{
+  display: flex;
+}
+.line{
+  border-bottom: 2px solid #394DFF;
+  width: -webkit-fill-available;
+  height: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;}
+
+
+  .HeaderImg{
+    background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/Untitled%20design.png?alt=media&token=3d4a95f6-382b-4b23-8bf9-04246d71155d) no-repeat center top;
+      height: 600px;
+      justify-content: center;
+      align-items: flex-start;
+  }
+  .PostCodeDiv{
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  .BookNowBut{
+    background: #394DFF;
+    border: 1px solid #2B3BCC;
+    color:#FFFFFF;
+    font-size: 24px;
+    border-radius: 10px;
+    display: grid;
+    align-content: stretch;
+    justify-items: center;
+    padding: 7px 10px;
+    margin: 15px;
+    width:-webkit-fill-available;
+}
+.BookNowButton{
+  background: #394DFF;
+  border: 1px solid #2B3BCC;
+  color:#FFFFFF;
+  font-size: 18px;
+  border-radius: 5px;
+  display: grid;
+  align-content: stretch;
+  justify-items: center;
+  padding: 5px;
+  margin: 15px;
+  width:80%;
+  align-self: center;
+}
+
+  .InputSearchPCode{
+    border-radius: 5px;
+    border:0px solid #2B3BCC;
+    height: 25px;
+    margin:5px;
+    width: 250px;
+  }
+  .imgSearch{
+    height: 25px;
+    width: 25px;
+    border:0px solid #2B3BCC;
+    margin: 5px;
+    background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/magnifying-glass-solid.svg?alt=media&token=9f2f0ed0-a62b-468d-bb0a-4500dfdf02c2) no-repeat center center;
+  }
+  .TitleHead{
+    font-size: 40px;
+    font-weight: 900;
+    color:black;
+    white-space: pre-wrap;
+  }
+  .PostcodeSearch{
+    padding: 10px 10px 10px 250px;
+    width: 500px;
+    background-color: RGBA(255,255,255,.45);
+  }
+.HeadingTitle{
+  background-color:#394DFF;
+  color: #FFFFFF;
+  border:2px solid #2B3BCC;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  padding-top: 10px;
+  padding-bottom:10px;
+  width:-webkit-fill-available;
+  padding-left: 250px;
+}
+.FeqCon{
+ display:grid;
+ justify-items: flex-start;
+}
+.FeqTit{
+font-size: 18px;
+font-weight: 700;
+}
+.FeqAns{
+font-size: 16px;
+}
+
+  @media screen and (max-width: 699px) {
+    h1, p {
+      font-family: Lato;
+    }
+    .Sec_1{
+      width: -webkit-fill-available;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
+      padding: 10px;
+    }
+    .Sec2_Par{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
+    }
+    .HeaderContainer{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+    .MenuBar{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: -webkit-fill-available;
+      justify-content: center;
+      height: 100px;
+      padding-right: 0px;
+    }
+    .MenuName{
+      display: flex;
+      justify-self: start;
+      font-size: 24px;
+      margin-left: 20px;
+    }
+    .MenuLinks{
+      display: flex;
+      justify-self: end;
+      font-size: 19px;
+      text-decoration: none;
+    }
+    .HeaderBarImg{
+      display:flex;
+      justify-content: left;
+      padding-left: 20px;
+    }
+    .Link{
+      margin: 5px;
+      text-decoration: none;
+      font-size: 22px;
+      color: #FFFFFF;
+    }
+    .Link:hover{
+      margin: 5px;
+      text-decoration: underline solid #394DFF;
+      font-size: 22px;
+    }
+    
+    
+    
+    .ServiceItem_1, .ServiceItem_2, .ServiceItem_3{
+      display: flex;
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FAssetPro.png?alt=media&token=e7c25339-2ae7-4f5e-bf3d-347c30246521) no-repeat left center;
+      height: 250px;
+      width: 250px;
+      align-items: center;
+      box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px;
+      margin: 5px;
+    }
+    .ServiceItem_2{
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FDrug.png?alt=media&token=2314e038-280d-43ed-a847-d8b5ae62fdfa) no-repeat left center;
+     
+    }
+    .ServiceItem_3{
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FStatic.png?alt=media&token=e9fc2340-fbd1-48ad-8b74-df2288cfea16) no-repeat left center;
+    
+    }
+    
+    .ServiceLabel{
+      color: white;
+      background-color: rgba(0, 0, 0, .5);
+      display: block;
+      width: -webkit-fill-available;
+      text-align-last: center;
+      padding: 20px;
+    }
+    .ServiceLabel:hover{
+      color: white;
+      font-weight: bolder;
+      text-decoration: underline;
+      text-decoration-thickness: 2.5px;
+    }
+    
+    .ServicesSection{
+      background-color: rgba(0, 79, 136, .05);
+      border: 1.5px solid rgba(0, 55, 95, .25);
+      min-height: 350px;
+      display: flex;
+    flex-direction: row;
+    }
+    
+    
+    body{ padding:0px;margin: 0px;}
+    
+    section{
+      min-height: 240px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+    
+    }
+    .Footer{
+      background-image: linear-gradient(135deg, rgb(1,136,211) 78%, rgb(0,79,136)78%);
+    }
+    .GallerySection{
+      background-color: rgba(196, 196, 196, 1);
+      border: 1.5px solid rgba(0, 55, 95, .25);
+    }
+    
+    .minServiceBox{
+      background: #FFFFFF;
+      border: 2px solid #394DFF;
+      border-radius: 10px;
+      min-width: 90px;
+      max-width: 300px;
+      min-height: 450px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 20px;
+      margin: 15px;
+    }
+    .minServiceBox:hover{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    }
+    .minServiceBox-unselect{
+      background: #FFFFFF;
+      border: 2px solid grey;
+      border-radius: 10px;
+      min-width: 90px;
+      max-width: 300px;
+      min-height: 450px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 20px;
+      margin: 15px;
+    }
+    .miniServiceButton{
+      color: white;
+      height: 30px;
+      display: flex;
+      width: fit-content;
+      align-self: center;
+      justify-self: center;
+      background: #394DFF;
+      border: 1px solid #2B3BCC;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .miniServiceButton-unselect{
+      color: white;
+      height: 30px;
+      display: flex;
+      width: fit-content;
+      align-self: center;
+      justify-self: center;
+      background: grey;
+      border: 1px solid rgb(90, 90, 90);
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .miniServiceButton:hover{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+     
+    }
+    .miniServiceTitle{
+      font-size: 34px;
+      font-weight: 900;
+      text-align: center;
+      height: fit-content;
+    }
+    .miniServiceBody{
+      font-size: 20px;
+      text-align: center;
+    }
+    .servicesSection{
+      display: flex;
+    }
+    .line{
+      border-bottom: 2px solid #394DFF;
+      width: -webkit-fill-available;
+      height: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;}
+    
+    
+      .HeaderImg{
+        background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/Untitled%20design.png?alt=media&token=3d4a95f6-382b-4b23-8bf9-04246d71155d) no-repeat center top;
+          height: 400px;
+          justify-content: center;
+          align-items: flex-start;
+      }
+      .PostCodeDiv{
+        padding: 2px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 30px;
+        margin-top: 10px;
+      }
+      .PostcodeSearch{
+        padding: 10px 10px 10px 10px;
+        width: -webkit-fill-available;
+        background-color: RGBA(255,255,255,.45);
+      }
+      .BookNowBut{
+        background: #394DFF;
+        border: 1px solid #2B3BCC;
+        color:#FFFFFF;
+        font-size: 20px;
+        border-radius: 10px;
+        display: grid;
+        align-content: stretch;
+        justify-items: center;
+        padding: 7px;
+        margin: 15px;
+        width:-webkit-fill-available;
+    }
+    .BookNowButton{
+      background: #394DFF;
+      border: 1px solid #2B3BCC;
+      color:#FFFFFF;
+      font-size: 20px;
+      border-radius: 5px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      padding: 5px;
+      margin: 15px;
+      width:80%;
+      align-self: center;
+    }
+    
+      .InputSearchPCode{
+        border-radius: 5px;
+        border:0px solid #2B3BCC;
+        height: 25px;
+        margin:5px;
+        width: 250px;
+      }
+      .imgSearch{
+        height: 25px;
+        width: 25px;
+        border:0px solid #2B3BCC;
+        margin: 5px;
+        background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/magnifying-glass-solid.svg?alt=media&token=9f2f0ed0-a62b-468d-bb0a-4500dfdf02c2) no-repeat center center;
+      }
+      .TitleHead{
+        font-size: 24px;
+        font-weight: 900;
+        color:black;
+        white-space: pre-wrap;
+      }
+
+  }
+  @media screen and (min-width: 700px ) and (max-width: 1019px) {
+    h1, p {
+      font-family: Lato;
+    }
+  
+    
+    .Sec2_Par{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
+    }
+    .HeaderContainer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+    .MenuBar{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: -webkit-fill-available;
+      justify-content: flex-end;
+      height: 170px;
+      padding-right: 0px;
+    }
+    .MenuName{
+      display: flex;
+      justify-self: start;
+      font-size: 24px;
+      margin-left: 20px;
+    }
+    .MenuLinks{
+      display: flex;
+      justify-self: end;
+      font-size: 19px;
+      text-decoration: none;
+    }
+    .HeaderBarImg{
+      display:flex;
+      justify-content: left;
+      padding-left: 20px;
+    }
+    .Link{
+      margin: 5px;
+      text-decoration: none;
+      font-size: 22px;
+      color: #FFFFFF;
+    }
+    .Link:hover{
+      margin: 5px;
+      text-decoration: underline solid #394DFF;
+      font-size: 22px;
+    }
+    
+    .Sec_1{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
+    }
+    
+    .ServiceItem_1, .ServiceItem_2, .ServiceItem_3{
+      display: flex;
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FAssetPro.png?alt=media&token=e7c25339-2ae7-4f5e-bf3d-347c30246521) no-repeat left center;
+      height: 250px;
+      width: 250px;
+      align-items: center;
+      box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px;
+      margin: 5px;
+    }
+    .ServiceItem_2{
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FDrug.png?alt=media&token=2314e038-280d-43ed-a847-d8b5ae62fdfa) no-repeat left center;
+     
+    }
+    .ServiceItem_3{
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FStatic.png?alt=media&token=e9fc2340-fbd1-48ad-8b74-df2288cfea16) no-repeat left center;
+    
+    }
+    
+    .ServiceLabel{
+      color: white;
+      background-color: rgba(0, 0, 0, .5);
+      display: block;
+      width: -webkit-fill-available;
+      text-align-last: center;
+      padding: 20px;
+    }
+    .ServiceLabel:hover{
+      color: white;
+      font-weight: bolder;
+      text-decoration: underline;
+      text-decoration-thickness: 2.5px;
+    }
+    
+    .ServicesSection{
+      background-color: rgba(0, 79, 136, .05);
+      border: 1.5px solid rgba(0, 55, 95, .25);
+      min-height: 350px;
+      display: flex;
+    flex-direction: row;
+    }
+    
+    
+    body{ padding:0px;margin: 0px;}
+    
+    section{
+      min-height: 240px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+    
+    }
+    .Footer{
+      background-image: linear-gradient(135deg, rgb(1,136,211) 78%, rgb(0,79,136)78%);
+    }
+    .GallerySection{
+      background-color: rgba(196, 196, 196, 1);
+      border: 1.5px solid rgba(0, 55, 95, .25);
+    }
+    
+    .minServiceBox{
+      background: #FFFFFF;
+      border: 2px solid #394DFF;
+      border-radius: 10px;
+      min-width: 90px;
+      max-width: 300px;
+      min-height: 450px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 20px;
+      margin: 15px;
+    }
+    .minServiceBox:hover{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    }
+    .minServiceBox-unselect{
+      background: #FFFFFF;
+      border: 2px solid grey;
+      border-radius: 10px;
+      min-width: 90px;
+      max-width: 300px;
+      min-height: 450px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 20px;
+      margin: 15px;
+    }
+    .miniServiceButton{
+      color: white;
+      height: 30px;
+      display: flex;
+      width: fit-content;
+      align-self: center;
+      justify-self: center;
+      background: #394DFF;
+      border: 1px solid #2B3BCC;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .miniServiceButton-unselect{
+      color: white;
+      height: 30px;
+      display: flex;
+      width: fit-content;
+      align-self: center;
+      justify-self: center;
+      background: grey;
+      border: 1px solid rgb(90, 90, 90);
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .miniServiceButton:hover{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+     
+    }
+    .miniServiceTitle{
+      font-size: 34px;
+      font-weight: 900;
+      text-align: center;
+      height: fit-content;
+    }
+    .miniServiceBody{
+      font-size: 20px;
+      text-align: center;
+    }
+    .servicesSection{
+      display: flex;
+    }
+    .line{
+      border-bottom: 2px solid #394DFF;
+      width: -webkit-fill-available;
+      height: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;}
+    
+    
+      .HeaderImg{
+        background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/Untitled%20design.png?alt=media&token=3d4a95f6-382b-4b23-8bf9-04246d71155d) no-repeat center top;
+          height: 600px;
+          justify-content: center;
+          align-items: flex-start;
+      }
+      .PostCodeDiv{
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 40px;
+        margin-top: 10px;
+      }
+      .BookNowBut{
+        background: #394DFF;
+        border: 1px solid #2B3BCC;
+        color:#FFFFFF;
+        font-size: 24px;
+        border-radius: 10px;
+        display: grid;
+        align-content: stretch;
+        justify-items: center;
+        padding: 5px 6px;
+        margin: 15px;
+        width:-webkit-fill-available;
+    }
+    .BookNowButton{
+      background: #394DFF;
+      border: 1px solid #2B3BCC;
+      color:#FFFFFF;
+      font-size: 18px;
+      border-radius: 5px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      padding: 5px;
+      margin: 15px;
+      width:80%;
+      align-self: center;
+    }
+    
+      .InputSearchPCode{
+        border-radius: 5px;
+        border:0px solid #2B3BCC;
+        height: 25px;
+        margin:5px;
+        width: 250px;
+      }
+      .imgSearch{
+        height: 25px;
+        width: 25px;
+        border:0px solid #2B3BCC;
+        margin: 5px;
+        background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/magnifying-glass-solid.svg?alt=media&token=9f2f0ed0-a62b-468d-bb0a-4500dfdf02c2) no-repeat center center;
+      }
+      .TitleHead{
+        font-size: 40px;
+        font-weight: 900;
+        color:black;
+        white-space: pre-wrap;
+      }
+      .PostcodeSearch{
+        padding: 10px 10px 10px 250px;
+        width: 500px;
+        background-color: RGBA(255,255,255,.45);
+      }
+
+  }
+  @media screen and (min-width: 1020px ) and (max-width: 1440px) {
+h1, p {
+      font-family: Lato;
+    }
+  
+    
+    .Sec2_Par{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
+    }
+    .HeaderContainer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+    .MenuBar{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: -webkit-fill-available;
+      justify-content: flex-end;
+      height: 170px;
+      padding-right: 100px;
+    }
+    .MenuName{
+      display: flex;
+      justify-self: start;
+      font-size: 24px;
+      margin-left: 20px;
+    }
+    .MenuLinks{
+      display: flex;
+      justify-self: end;
+      font-size: 19px;
+      text-decoration: none;
+    }
+    .HeaderBarImg{
+      display:flex;
+      justify-content: left;
+      padding-left: 20px;
+    }
+    .Link{
+      margin: 5px;
+      text-decoration: none;
+      font-size: 22px;
+      color: #FFFFFF;
+    }
+    .Link:hover{
+      margin: 5px;
+      text-decoration: underline solid #394DFF;
+      font-size: 22px;
+    }
+    
+    .Sec_1{
+      width: 750px;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
+    }
+    
+    .ServiceItem_1, .ServiceItem_2, .ServiceItem_3{
+      display: flex;
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FAssetPro.png?alt=media&token=e7c25339-2ae7-4f5e-bf3d-347c30246521) no-repeat left center;
+      height: 250px;
+      width: 250px;
+      align-items: center;
+      box-shadow: rgb(0 0 0 / 20%) 4px 4px 4px;
+      margin: 5px;
+    }
+    .ServiceItem_2{
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FDrug.png?alt=media&token=2314e038-280d-43ed-a847-d8b5ae62fdfa) no-repeat left center;
+     
+    }
+    .ServiceItem_3{
+      background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FStatic.png?alt=media&token=e9fc2340-fbd1-48ad-8b74-df2288cfea16) no-repeat left center;
+    
+    }
+    
+    .ServiceLabel{
+      color: white;
+      background-color: rgba(0, 0, 0, .5);
+      display: block;
+      width: -webkit-fill-available;
+      text-align-last: center;
+      padding: 20px;
+    }
+    .ServiceLabel:hover{
+      color: white;
+      font-weight: bolder;
+      text-decoration: underline;
+      text-decoration-thickness: 2.5px;
+    }
+    
+    .ServicesSection{
+      background-color: rgba(0, 79, 136, .05);
+      border: 1.5px solid rgba(0, 55, 95, .25);
+      min-height: 350px;
+      display: flex;
+    flex-direction: row;
+    }
+    
+    
+    body{ padding:0px;margin: 0px;}
+    
+    section{
+      min-height: 240px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      display: flex;
+    
+    }
+    .Footer{
+      background-image: linear-gradient(135deg, rgb(1,136,211) 78%, rgb(0,79,136)78%);
+    }
+    .GallerySection{
+      background-color: rgba(196, 196, 196, 1);
+      border: 1.5px solid rgba(0, 55, 95, .25);
+    }
+    
+    .minServiceBox{
+      background: #FFFFFF;
+      border: 2px solid #394DFF;
+      border-radius: 10px;
+      min-width: 90px;
+      max-width: 300px;
+      min-height: 450px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 20px;
+      margin: 15px;
+    }
+    .minServiceBox:hover{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    }
+    .minServiceBox-unselect{
+      background: #FFFFFF;
+      border: 2px solid grey;
+      border-radius: 10px;
+      min-width: 90px;
+      max-width: 300px;
+      min-height: 450px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      flex-direction: column;
+      padding: 20px;
+      margin: 15px;
+    }
+    .miniServiceButton{
+      color: white;
+      height: 30px;
+      display: flex;
+      width: fit-content;
+      align-self: center;
+      justify-self: center;
+      background: #394DFF;
+      border: 1px solid #2B3BCC;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .miniServiceButton-unselect{
+      color: white;
+      height: 30px;
+      display: flex;
+      width: fit-content;
+      align-self: center;
+      justify-self: center;
+      background: grey;
+      border: 1px solid rgb(90, 90, 90);
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .miniServiceButton:hover{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+     
+    }
+    .miniServiceTitle{
+      font-size: 34px;
+      font-weight: 900;
+      text-align: center;
+      height: fit-content;
+    }
+    .miniServiceBody{
+      font-size: 20px;
+      text-align: center;
+    }
+    .servicesSection{
+      display: flex;
+    }
+    .line{
+      border-bottom: 2px solid #394DFF;
+      width: -webkit-fill-available;
+      height: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;}
+    
+    
+      .HeaderImg{
+        background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/Untitled%20design.png?alt=media&token=3d4a95f6-382b-4b23-8bf9-04246d71155d) no-repeat center top;
+          height: 600px;
+          justify-content: center;
+          align-items: flex-start;
+      }
+      .PostCodeDiv{
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 40px;
+        margin-top: 10px;
+      }
+      .BookNowBut{
+        background: #394DFF;
+        border: 1px solid #2B3BCC;
+        color:#FFFFFF;
+        font-size: 24px;
+        border-radius: 10px;
+        display: grid;
+        align-content: stretch;
+        justify-items: center;
+        padding: 5px 6px;
+        margin: 15px;
+        width:-webkit-fill-available;
+    }
+    .BookNowButton{
+      background: #394DFF;
+      border: 1px solid #2B3BCC;
+      color:#FFFFFF;
+      font-size: 18px;
+      border-radius: 5px;
+      display: grid;
+      align-content: stretch;
+      justify-items: center;
+      padding: 5px;
+      margin: 15px;
+      width:80%;
+      align-self: center;
+    }
+    
+      .InputSearchPCode{
+        border-radius: 5px;
+        border:0px solid #2B3BCC;
+        height: 25px;
+        margin:5px;
+        width: 250px;
+      }
+      .imgSearch{
+        height: 25px;
+        width: 25px;
+        border:0px solid #2B3BCC;
+        margin: 5px;
+        background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/magnifying-glass-solid.svg?alt=media&token=9f2f0ed0-a62b-468d-bb0a-4500dfdf02c2) no-repeat center center;
+      }
+      .TitleHead{
+        font-size: 40px;
+        font-weight: 900;
+        color:black;
+        white-space: pre-wrap;
+      }
+      .PostcodeSearch{
+        padding: 10px 10px 10px 150px;
+        width: 500px;
+        background-color: RGBA(255,255,255,.45);
+      }
+  }
