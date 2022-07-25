@@ -67,7 +67,7 @@ let EachCustomItems = 0;
     const [suburb, setSuburb] = useState('');
     const [startDate, setStartDate] = useState('');
     const [SuburbsList, setSuburbsList] = useState('');
-    
+    const [specialReq, setSpecialReq] = useState('');
     
     const suburbsList = ref(database, 'Information/ServicableArea/');
     onValue(suburbsList, (snapshot) => { global.suburbsItems = (snapshot.val())});
@@ -99,6 +99,8 @@ let EachCustomItems = 0;
     onValue(OutSideItemsList, (snapshot) => { OutSideItems = (snapshot.val())});
 
     onValue(OtherItemsList, (snapshot) => { OtherItems = (snapshot.val())});
+
+
       useEffect(()=>{
       console.log(customItem)
       console.log("Price Before: " + customItemCost);
@@ -112,30 +114,36 @@ let EachCustomItems = 0;
       console.log(tempmoney);
       addItemTogether(tempmoney);
 
-   },[customItem]);
+      },[customItem]);
+
+   useEffect(() => {
+      console.log('ChangeID')
+    switch(id){
+      case '1':
+        SetCleanDisplay(cleanType);
+        setCustomItem([])
+      break;
+      case '2':
+        SetCleanDisplay('Yard work');
+        setCustomItem([])
+      break; 
+      case '3':
+        SetCleanDisplay('Bond');
+        setCustomItem([])
+      break; 
+      case '4':
+        SetCleanDisplay('Custom Clean');
+        setCustomItem([])
+      break; 
+    }
+      },[id])
+
 
     useEffect(() => {
       
       TotalCostService = (((customItemCost + EachCustomItems) +((customItemCost + EachCustomItems) * disPrice)) + cost);
       ClientDetails['Address']["Suburb"] = suburb;
-      switch(id){
-        case '1':
-          SetCleanDisplay(cleanType);
-          
-        break;
-        case '2':
-          SetCleanDisplay('Yard work');
-         
-        break; 
-        case '3':
-          SetCleanDisplay('Bond');
-          
-        break; 
-        case '4':
-          SetCleanDisplay('Custom Clean');
-          
-        break; 
-      }
+      
 
       switch(reqId){
         case 'Once':
@@ -295,7 +303,7 @@ let EachCustomItems = 0;
 
           <div className='line' style={CleanDisplay === "Yard work"|| CleanDisplay === "Select" || CleanDisplay === "" ? {display:'none'}:{display:'block'}}></div>
 
-          <div style={CleanDisplay === "Yard work" || CleanDisplay === "Select" || CleanDisplay === ""  ? {display:'none'}:{display:'block'}}>
+          <div style={ CleanDisplay === "Select" || CleanDisplay === ""  ? {display:'none'}:{display:'block'}}>
             <h2>How what day of the week would you like</h2>
             <div className='DaysSelect'>
               <div style={{display:'flex', alignItems:'center'}}>
@@ -329,14 +337,14 @@ let EachCustomItems = 0;
               </div>
             </div>
 
-          <div className='line' style={CleanDisplay === "Yard work" || CleanDisplay === "Select"|| CleanDisplay === ""  ? {display:'none'}:{display:'block'}}></div>
+          <div className='line' style={CleanDisplay === "Select"|| CleanDisplay === ""  ? {display:'none'}:{display:'block'}}></div>
 
-          <div style={CleanDisplay === "Yard work" || CleanDisplay === "Select"|| CleanDisplay === ""  ? {display:'none'}:{display:'block'}} >
+          <div style={CleanDisplay === "Select"|| CleanDisplay === ""  ? {display:'none'}:{display:'block'}} >
             <h2>What date would suit you?</h2>
             <input type='date' style={{width:'100%',border:'1.5px solid #394DFF',height:'35px', borderRadius:'10px',fontSize:'18px' ,textAlign:'center'}} onChange={(e)=> setdateformat(e.target.value)}/>
             </div>
 
-          <div className='line' style={CleanDisplay === "Yard work" || CleanDisplay === "Select" || CleanDisplay === "" ? {display:'none'}:{display:'block'}}></div>
+          <div className='line' style={CleanDisplay === "Select" || CleanDisplay === "" ? {display:'none'}:{display:'block'}}></div>
 
           <div style={CleanDisplay === 'Custom Clean' || CleanDisplay === 'Yard work' || CleanDisplay === "Select" ? {display:'block'}:{display:'none'}}>
             <h2 style={CleanDisplay === 'Custom Clean' || CleanDisplay === 'Yard work'  ? {display:'block'}:{display:'none'}}>Custom Add On's</h2>
@@ -397,8 +405,8 @@ let EachCustomItems = 0;
                     <div className='CustomItem'>
                       <label className='customCheckLabels'>{item['Name']}</label>
                       {item['TaskType'] == 'Each'? 
-                      <input className='InputCustItem' type="number" defaultValue={0} onChange={(e => editforEachItem({Name:"Kitchen - " +item['Name'],Price:item['Price'],Quanity:e.target.value,TotalCost:0})) }/>:
-                      <input type='checkbox' className='customChecks' value={item['Price']} onChange={(e => editcustomItems(e.target.checked,{Name:"Kitchen - " +item['Name'],Price:item['Price'],Quanity:1,EstTime:item['EstTime'],TotalCost:0}) )}/>
+                      <input className='InputCustItem' type="number" defaultValue={0} onChange={(e => editforEachItem({Name:item['Name'],Price:item['Price'],Quanity:e.target.value,TotalCost:0})) }/>:
+                      <input type='checkbox' className='customChecks' value={item['Price']} onChange={(e => editcustomItems(e.target.checked,{Name:item['Name'],Price:item['Price'],Quanity:1,EstTime:item['EstTime'],TotalCost:0}) )}/>
                       }</div>
                   ))}
                 </div>
@@ -410,7 +418,7 @@ let EachCustomItems = 0;
           <div >
             <h2>Speical Requirements</h2>
               <div style={{width:'-webkit-fill-available', display:'flex', justifyContent:'center'}}>
-              <textarea style={{width:'80%',height:'200px',}}/>
+              <textarea id='specialReq' style={{width:'80%',height:'200px',}} onChange={(e => setSpecialReq(e.target.value))}/>
               </div>
           </div>
 
@@ -436,10 +444,11 @@ let EachCustomItems = 0;
                   <input name='CleanDetails' value={CleanInfoItems} style={{display:"none"}} />
                 </div>
               </div>
-              <button type="submit" className='BookNowButton' onClick={() => CreateInvoice(OrderRefNumber,CleanDisplay,rooms,bathRooms,startDate,customItem,TotalCostService)}>
+              <button type="submit" className='BookNowButton' style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} onClick={() => CreateInvoice(OrderRefNumber,CleanDisplay,rooms,bathRooms,startDate,customItem,TotalCostService,specialReq)}>
                   Book Now
                 </button>
               </form>
+              <button className='BookNowButton' style={CleanDisplay === 'Yard work' ? {display:'flex'}:{display:'none'}} onClick={() => CreateYardInvoice(OrderRefNumber,CleanDisplay,startDate,customItem,specialReq)}>Book Quote</button>
           
         </div>
 
@@ -558,11 +567,8 @@ let EachCustomItems = 0;
     return (!str || /^\s*$/.test(str));
 }
 
- async function CreateInvoice(RefCode, CleanType, Rooms, Bathroom, StartDate, CustomItems, ServiceCost){
+ async function CreateInvoice(RefCode, CleanType, Rooms, Bathroom, StartDate, CustomItems, ServiceCost,comments){
   var checkList = 0;
-
- 
-
   if(!isBlank(ClientDetails['FirstName'])){
     checkList++;
   }
@@ -588,10 +594,6 @@ let EachCustomItems = 0;
     checkList++;
   }
 
-  console.log(checkList)
-
-  console.log(ClientDetails)
-
 if(checkList <= 8){
 
    var CleanInfoItems;
@@ -609,6 +611,9 @@ if(checkList <= 8){
     case 'Custom Clean':
       CleanInfoItems = CustomItems;
     break;
+    case 'Yard work':
+      CleanInfoItems = CustomItems;
+    break;
 
   }
 
@@ -622,7 +627,7 @@ if(checkList <= 8){
 
 
     doc.addImage(logo, 'PNG', 10, 5,40,40)
-    doc.text("Quote " + RefCode, 200, 12, {align:'right'});
+    doc.text("Quote: " + RefCode, 200, 12, {align:'right'});
     doc.text("Date: " + QDate, 200, 20, {align:'right'});
     doc.text("ABN: ", 200, 26, {align:'right'});
     doc.text("ADDRESS line 1: ", 200, 32, {align:'right'});
@@ -637,7 +642,7 @@ if(checkList <= 8){
     doc.setFontSize(18)
     
     doc.setFontSize(16)
-    doc.text("Service Quote for " +Rooms + " Bedrooms & " +Bathroom + " Bathrooms", 10, 70, {align:'left'});
+    doc.text("Service Quote for " +Rooms + " Bedrooms & " +Bathroom + " Bathrooms requested for" + StartDate, 10, 70, {align:'left'});
     doc.text(CleanType + " Clean includes:", 10, 80, {align:'left'});
     var textHeight = 85;
     
@@ -661,7 +666,9 @@ if(checkList <= 8){
     
 
     doc.text("Total Cost per Service: $" + ServiceCost , 10, CusttextHeight + 30, {align:'left'});
-    
+
+    doc.text("Special requirements:", 10, CusttextHeight + 40, {align:'left'});
+      doc.text(comments, 10, CusttextHeight + 46, {align:'left'});
     var blob = doc.output("blob");
   
     uploadBytes(storageRef, blob).then((snapshot) => {
@@ -669,5 +676,77 @@ if(checkList <= 8){
     });
     }
  
+
   }
+
+  async function CreateYardInvoice(RefCode, CleanType, StartDate, CustomItems,comments){
+    const doc = new jsPDF();
+    var checkList = 0;
+    if(!isBlank(ClientDetails['FirstName'])){
+      checkList++;
+    }
+    if(!isBlank(ClientDetails['LastName'])){
+      checkList++;
+    }
+    if(!isBlank(ClientDetails['Email'])){
+      checkList++;
+    }
+    if(!isBlank(ClientDetails['Phone'])){
+      checkList++;
+    }
+    if(!isBlank(ClientDetails['Address']['Line1'])){
+      checkList++;
+    }
+    if(!isBlank(ClientDetails['Address']['Suburb'])){
+      checkList++;
+    }
+    if(!isBlank(ClientDetails['Address']['State'])){
+      checkList++;
+    }
+    if(!isBlank(ClientDetails['Address']['PostCode'])){
+      checkList++;
+    }
+   if(checkList <= 8){
+  
+    var logo = new Image();
+    logo.src = '/Logo_Base.jpg';
+  
+      var d = new window.Date();
+      var Date = d.getDate() +"" +(d.getMonth() + 1) +"" + d.getFullYear();
+      var QDate = d.getDate() +"/" +(d.getMonth() + 1) +"/" + d.getFullYear();
+      const storageRef = Stref(storage, '/Quotes/'+RefCode+" - "+ClientDetails['LastName']+" "+ClientDetails['FirstName']+" - "+Date);
+  
+  
+      doc.addImage(logo, 'PNG', 10, 5,40,40)
+      doc.text("Quote: " + RefCode, 200, 12, {align:'right'});
+      doc.text("Date: " + QDate, 200, 20, {align:'right'});
+      doc.text("ABN: ", 200, 26, {align:'right'});
+      doc.text("ADDRESS line 1: ", 200, 32, {align:'right'});
+      doc.text("ADDRESS line 2: ", 200, 38, {align:'right'});
+      
+      doc.text("Full Name: " + ClientDetails['FirstName'] + " " +ClientDetails['LastName'] , 10, 43, {align:'left'});
+      doc.text("Phone: " + ClientDetails["Phone"] , 10, 48, {align:'left'});
+      doc.text("Address: " + ClientDetails['Address']['Line1'] , 10, 53, {align:'left'});
+      doc.text("Address: " + ClientDetails['Address']['Suburb'] + " " + ClientDetails['Address']['PostCode'] + " " + ClientDetails['Address']['State'] , 10, 58, {align:'left'});
+      doc.setFontSize(16)
+      doc.text("Service Quote Required for "+ CleanType + " on " + StartDate+ " includes: ", 10, 70, {align:'left'});
+      var textHeight = 75;
+      doc.setFontSize(16)
+      for(var i=0;i<CustomItems.length;i++){
+        doc.setFontSize(12)
+        doc.text("- "+ CustomItems[i].Name + " - " + CustomItems[i].Quanity, 10, textHeight, {align:'left'});
+        textHeight = textHeight + 5;
+      }
+      doc.text("Special requirements", 10, textHeight + 10, {align:'left'});
+      doc.text(comments, 10, textHeight + 15, {align:'left'});
+
+      //StartDate
+      var blob = doc.output("blob");
+    
+      uploadBytes(storageRef, blob).then((snapshot) => {
+        console.log('Uploaded a blob or file!');
+      });
+      }
+   
+    }
   

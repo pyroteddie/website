@@ -5,7 +5,7 @@ import FAQScreen from './screens/FAQ'
 import BookingScreen from './screens/priceBooking'
 import InfoScreen from './screens/info'
 import Header from './components/header'
-
+import AdminScreen from './screens/admin';
 
 
 
@@ -20,6 +20,7 @@ export default function AppMain() {
       <Route path="FAQ" element={< FAQScreen/>}/> 
       <Route path="Booking" element={< BookingScreen/>}/> 
       <Route path="Info" element={< InfoScreen/>}/> 
+      <Route path="admin" element={< AdminScreen/>}/> 
         
       </Routes>
     </div>
