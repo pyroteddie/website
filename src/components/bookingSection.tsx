@@ -143,7 +143,24 @@ let EachCustomItems = 0;
       
       TotalCostService = (((customItemCost + EachCustomItems) +((customItemCost + EachCustomItems) * disPrice)) + cost);
       ClientDetails['Address']["Suburb"] = suburb;
-      
+      switch(id){
+        case '1':
+          SetCleanDisplay(cleanType);
+         
+        break;
+        case '2':
+          SetCleanDisplay('Yard work');
+          
+        break; 
+        case '3':
+          SetCleanDisplay('Bond');
+         
+        break; 
+        case '4':
+          SetCleanDisplay('Custom Clean');
+          
+        break; 
+      }
 
       switch(reqId){
         case 'Once':
@@ -455,13 +472,13 @@ let EachCustomItems = 0;
         <div className='bookingSumContainer'>
           <h3 className='BookSumTitle'>Your Booking Summary</h3>
             <div className='bookingItems'>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Clean Type: </a><a className='BookSumLineItem'>{CleanDisplay}</a></div>
-            <div style={{display:'none', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Frequency: </a><a className='BookSumLineItem'>{reqId}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Rooms: </a><a className='BookSumLineItem'>{rooms}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Bathrooms: </a><a className='BookSumLineItem'>{bathRooms}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Start Date: </a><a className='BookSumLineItem'>{startDate}</a></div>
-            <div style={{display:'flex', flexDirection:'row',justifyContent: 'space-between',width: '-webkit-fill-available'}}><a className='BookSumLineItemTitle'>Price Per-Service: </a><a className='BookSumLineItem'>${(((customItemCost) +((customItemCost) * disPrice)) + cost).toFixed(2)}</a></div>
-            <div style={{display:'flex', flexDirection:'row'}}><p>* Includes GST tax</p></div>
+            <div className='booksumDiv'><a className='BookSumLineItemTitle'>Clean Type: </a><a className='BookSumLineItem'>{CleanDisplay}</a></div>
+            <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Frequency: </a><a className='BookSumLineItem'>{reqId}</a></div>
+            <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Rooms: </a><a className='BookSumLineItem'>{rooms}</a></div>
+            <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Bathrooms: </a><a className='BookSumLineItem'>{bathRooms}</a></div>
+            <div className='booksumDiv'><a className='BookSumLineItemTitle'>Start Date: </a><a className='BookSumLineItem'>{startDate}</a></div>
+            <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Price Per-Service: </a><a className='BookSumLineItem'>${(((customItemCost) +((customItemCost) * disPrice)) + cost).toFixed(2)}</a></div>
+            <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex', flexDirection:'row'}}><p>* Includes GST tax</p></div>
             </div>
         </div>
 
