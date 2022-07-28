@@ -38,7 +38,27 @@ const storage = getStorage();
                             Suburb:"",
                             State:"",
                             PostCode:""}}
-
+    var Details = {
+      ClientDetails:{ 
+        FirstName:"",
+        LastName:"",
+        Email:"",
+        Phone:"",
+        Address:{
+        Line1:"",
+        Suburb:"",
+        State:"",
+        PostCode:""}
+        },
+      CleanType:"",
+      RefCode:"",
+      Rooms:"", 
+      Bathroom:"", 
+      StartDate:"",
+      CustomItems:"",
+      ServiceCost:"",
+      comments:""
+      }                        
     let BaseRates = []
  
     let CTDeepCleanItems = [];
@@ -101,7 +121,7 @@ let EachCustomItems = 0;
     onValue(OtherItemsList, (snapshot) => { OtherItems = (snapshot.val())});
 
 
-      useEffect(()=>{
+    useEffect(()=>{
       console.log(customItem)
       console.log("Price Before: " + customItemCost);
       var tempmoney = 0;
@@ -114,9 +134,9 @@ let EachCustomItems = 0;
       console.log(tempmoney);
       addItemTogether(tempmoney);
 
-      },[customItem]);
+    },[customItem]);
 
-   useEffect(() => {
+    useEffect(() => {
       console.log('ChangeID')
     switch(id){
       case '1':
@@ -143,44 +163,45 @@ let EachCustomItems = 0;
       
       TotalCostService = (((customItemCost + EachCustomItems) +((customItemCost + EachCustomItems) * disPrice)) + cost);
       ClientDetails['Address']["Suburb"] = suburb;
-      switch(id){
-        case '1':
-          SetCleanDisplay(cleanType);
-         
-        break;
-        case '2':
-          SetCleanDisplay('Yard work');
-          
-        break; 
-        case '3':
-          SetCleanDisplay('Bond');
-         
-        break; 
-        case '4':
-          SetCleanDisplay('Custom Clean');
-          
-        break; 
-      }
-
-      switch(reqId){
-        case 'Once':
-          setdisPrice(0);
-
-        break;
-        case 'Weekly':
-          setdisPrice(0.30);
-
-        break; 
-        case 'Fortnightly':
-          setdisPrice(0.20);
-
-        break; 
-        case 'Monthly':
-          setdisPrice(0.15);
-
-        break; 
         
-      }
+      switch(id){
+          case '1':
+            SetCleanDisplay(cleanType);
+          
+          break;
+          case '2':
+            SetCleanDisplay('Yard work');
+            
+          break; 
+          case '3':
+            SetCleanDisplay('Bond');
+          
+          break; 
+          case '4':
+            SetCleanDisplay('Custom Clean');
+            
+          break; 
+        }
+
+        switch(reqId){
+          case 'Once':
+            setdisPrice(0);
+
+          break;
+          case 'Weekly':
+            setdisPrice(0.30);
+
+          break; 
+          case 'Fortnightly':
+            setdisPrice(0.20);
+
+          break; 
+          case 'Monthly':
+            setdisPrice(0.15);
+
+          break; 
+          
+        }
       
         switch(CleanDisplay){
           case 'General':
@@ -198,7 +219,8 @@ let EachCustomItems = 0;
           break;
 
         }
-      switch(CleanDisplay){
+
+        switch(CleanDisplay){
         case 'General':
           var base = Number(BaseRates['GeneralClean']['Base']);
           var room = Number(BaseRates['GeneralClean']['Bed']);
@@ -242,7 +264,30 @@ let EachCustomItems = 0;
           setBathPrice(bath);
         break;
 
-      }
+        }
+        Details = {
+          ClientDetails:{ 
+            FirstName:"",
+            LastName:"",
+            Email:"",
+            Phone:"",
+            Address:{
+            Line1:"",
+            Suburb:"",
+            State:"",
+            PostCode:""}
+            },
+          CleanType:"",
+          RefCode:"",
+          Rooms:"", 
+          Bathroom:"", 
+          StartDate:"",
+          CustomItems:"",
+          ServiceCost:"",
+          comments:""
+          }    
+
+
       var GST = .10;
       var discountPrice = ((basePrice + (roomPrice * (rooms-1)) + (bathPrice * (bathRooms-1))) * disPrice)
       var basicCost = (basePrice + (roomPrice * (rooms-1)) + (bathPrice * (bathRooms-1)))
@@ -473,7 +518,7 @@ let EachCustomItems = 0;
           <h3 className='BookSumTitle'>Your Booking Summary</h3>
             <div className='bookingItems'>
             <div className='booksumDiv'><a className='BookSumLineItemTitle'>Clean Type: </a><a className='BookSumLineItem'>{CleanDisplay}</a></div>
-            <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Frequency: </a><a className='BookSumLineItem'>{reqId}</a></div>
+            <div style={{display:'none'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Frequency: </a><a className='BookSumLineItem'>{reqId}</a></div>
             <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Rooms: </a><a className='BookSumLineItem'>{rooms}</a></div>
             <div style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} className='booksumDiv'><a className='BookSumLineItemTitle'>Bathrooms: </a><a className='BookSumLineItem'>{bathRooms}</a></div>
             <div className='booksumDiv'><a className='BookSumLineItemTitle'>Start Date: </a><a className='BookSumLineItem'>{startDate}</a></div>
@@ -489,8 +534,9 @@ let EachCustomItems = 0;
     function addItemTogether(tempmoney){
       setCustomItemCost(Number(tempmoney))
 
-    }        
-  async function editcustomItems(Checked,Value){
+    }   
+
+    async function editcustomItems(Checked,Value){
 
     if(Checked === true){
       //setCustomItemCost(Number(customItemCost) + Number(Value.Price))
@@ -505,32 +551,23 @@ let EachCustomItems = 0;
       
     }
     
-  }
+    }
 
   
 
-  function editforEachItem(Value){
+    function editforEachItem(Value){
   var arry_Item = customItem.findIndex((arr => arr.Name === Value['Name']))
     if(arry_Item == -1){
       setCustomItem([{Name:Value['Name'],Price:Value['Price'],Quanity:Value['Quanity'],TotalCost:Value['Quanity']*Value['Price']}, ...customItem])
-     
     }else{
-
-        var temptarr = []
-        //var arryItem
-        temptarr = customItem
-        console.log(temptarr)
-       // arryItem = temptarr.findIndex((arr => arr.Name === Value['Name']))
-       // temptarr[arryItem].Quanity = Value['Quanity']
-      
-      //setCustomItem(temptarr)
+      var temptarr = []
+      temptarr = customItem
+      console.log(temptarr)
       setCustomItem((e) => e.map((item) =>{
         return item.Name === Value['Name'] ? {...item, Quanity:Value['Quanity'] } : item;
       }))
-      
     }
-   
-  }
+    }
   
     function SetreqActive(ID){
       if(reqactive != true){
@@ -541,6 +578,7 @@ let EachCustomItems = 0;
        
       }
     }
+
     function SetCleanActive(ID){
       if(cleanType != ID){
         setCleanTypeActive(true);
@@ -551,6 +589,7 @@ let EachCustomItems = 0;
         setCleanTypeActive(false);
       }
     }
+
     function MiniService({Title, Info, Link}) {
       var title = Title; 
       var info = Info; 
@@ -577,14 +616,15 @@ let EachCustomItems = 0;
     
     
     
-  }
-  const doc = new jsPDF();
+    }
+    const doc = new jsPDF();
 
-  function isBlank(str) {
+    function isBlank(str) {
     return (!str || /^\s*$/.test(str));
-}
+    }
 
- async function CreateInvoice(RefCode, CleanType, Rooms, Bathroom, StartDate, CustomItems, ServiceCost,comments){
+  async function CreateInvoice(RefCode, CleanType, Rooms, Bathroom, StartDate, CustomItems, ServiceCost,comments){
+    const doc = new jsPDF();
   var checkList = 0;
   if(!isBlank(ClientDetails['FirstName'])){
     checkList++;
@@ -765,5 +805,5 @@ if(checkList <= 8){
       });
       }
    
-    }
+  }
   
