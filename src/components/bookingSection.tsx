@@ -52,11 +52,11 @@ const storage = getStorage();
         },
       CleanType:"",
       RefCode:"",
-      Rooms:"", 
-      Bathroom:"", 
+      Rooms:0, 
+      Bathroom:0, 
       StartDate:"",
-      CustomItems:"",
-      ServiceCost:"",
+      CustomItems:[],
+      ServiceCost:0,
       comments:""
       }                        
     let BaseRates = []
@@ -266,27 +266,17 @@ let EachCustomItems = 0;
 
         }
         Details = {
-          ClientDetails:{ 
-            FirstName:"",
-            LastName:"",
-            Email:"",
-            Phone:"",
-            Address:{
-            Line1:"",
-            Suburb:"",
-            State:"",
-            PostCode:""}
-            },
-          CleanType:"",
-          RefCode:"",
-          Rooms:"", 
-          Bathroom:"", 
-          StartDate:"",
-          CustomItems:"",
-          ServiceCost:"",
-          comments:""
+          ClientDetails:ClientDetails,
+          CleanType:CleanDisplay,
+          RefCode:OrderRefNumber,
+          Rooms:rooms, 
+          Bathroom:bathRooms, 
+          StartDate:startDate,
+          CustomItems:customItem,
+          ServiceCost:TotalCostService,
+          comments:specialReq
           }    
-
+          
 
       var GST = .10;
       var discountPrice = ((basePrice + (roomPrice * (rooms-1)) + (bathPrice * (bathRooms-1))) * disPrice)
@@ -504,6 +494,9 @@ let EachCustomItems = 0;
                   <input name='ServicePrice' value={TotalCostService} style={{display:"none"}}/>
                   <input name='Cleantype' value={CleanDisplay} style={{display:"none"}}/>
                   <input name='CleanDetails' value={CleanInfoItems} style={{display:"none"}} />
+                  <input id='Details' value={Details.toString()} style={{display:"none"}} />
+
+                  
                 </div>
               </div>
               <button type="submit" className='BookNowButton' style={CleanDisplay === 'Yard work' ? {display:'none'}:{display:'flex'}} onClick={() => CreateInvoice(OrderRefNumber,CleanDisplay,rooms,bathRooms,startDate,customItem,TotalCostService,specialReq)}>
