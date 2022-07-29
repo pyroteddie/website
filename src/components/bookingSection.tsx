@@ -29,27 +29,16 @@ const storage = getStorage();
     let OutSideItems = [];
     let BedroomItems = [];
     let OtherItems= [];
-    var ClientDetails = { FirstName:"",
+    var ClientDetails={ FirstName:"",
                           LastName:"",
-                          Email:"",
-                          Phone:"",
+                          Email:'',
+                          Phone:'',
                           Address:{
-                            Line1:"",
-                            Suburb:"",
-                            State:"",
-                            PostCode:""}}
+                            Line1:'',
+                            Suburb:'',
+                            State:'',
+                            PostCode:''}}
     var Details = {
-      ClientDetails:{ 
-        FirstName:"",
-        LastName:"",
-        Email:"",
-        Phone:"",
-        Address:{
-        Line1:"",
-        Suburb:"",
-        State:"",
-        PostCode:""}
-        },
       CleanType:"",
       RefCode:"",
       Rooms:0, 
@@ -266,7 +255,6 @@ let EachCustomItems = 0;
 
         }
         Details = {
-          ClientDetails:ClientDetails,
           CleanType:CleanDisplay,
           RefCode:OrderRefNumber,
           Rooms:rooms, 
@@ -480,21 +468,21 @@ let EachCustomItems = 0;
             <h2>Your Details</h2>
               <div style={{display:'flex', flexDirection:'row',justifyContent:'center'}}>
                 <div style={{display:'flex', flexDirection:'column',padding:'15px'}}>
-                  <input required name='ClientName' id='UserFName' placeholder='First Name' className='InputDetails' type="text" onChange={(e) => ClientDetails['FirstName'] = e.target.value}/>
-                  <input required id='UserEName' placeholder='Email' className='InputDetails' type="email" onChange={(e) => ClientDetails['Email'] = e.target.value} />
-                  <input required id='UserAdd' placeholder='Address' className='InputDetails' type="text" onChange={(e) => ClientDetails['Address']["Line1"] = e.target.value} />
-                  <input required id='UserLState' placeholder='State' className='InputDetails' type="text" onChange={(e) => ClientDetails['Address']['State'] = e.target.value}/>
+                  <input required name='ClientName' id='UserFName' placeholder='First Name' className='InputDetails' type="text" onChange={(e) => ClientDetails['FirstName']=e.target.value}/>
+                  <input required name='UserEName' placeholder='Email' className='InputDetails' type="email" onChange={(e) => ClientDetails['Email']=e.target.value} />
+                  <input required name='UserAdd' placeholder='Address' className='InputDetails' type="text" onChange={(e) => ClientDetails['Address']["Line1"] = e.target.value} />
+                  <input required name='UserLState' placeholder='State' className='InputDetails' type="text" onChange={(e) => ClientDetails['Address']['State'] = e.target.value}/>
                 </div>
                 <div style={{display:'flex', flexDirection:'column',padding:'15px'}}>
-                  <input required id='UserLName' placeholder='Last Name'  className='InputDetails' type="text" onChange={(e) => ClientDetails['LastName'] = e.target.value}/>
-                  <input required id='UserPhone' placeholder='Phone' className='InputDetails' type="tel" onChange={(e) => ClientDetails['Phone'] = e.target.value}/>
-                  <input required id='UserSub' placeholder='Suburb' className='InputDetails' value={suburb}  onChange={(e) => ClientDetails['Address']["Suburb"] = suburb}/>
-                  <input required id='UserPCode' placeholder='Post code' className='InputDetails' onChange={(e) => ClientDetails['Address']['PostCode'] = e.target.value} />
+                  <input required name='UserLName' placeholder='Last Name'  className='InputDetails' type="text" onChange={(e) => ClientDetails['LastName'] = e.target.value}/>
+                  <input required name='UserPhone' placeholder='Phone' className='InputDetails' type="tel" onChange={(e) => ClientDetails['Phone'] = e.target.value}/>
+                  <input required name='UserSub' placeholder='Suburb' className='InputDetails' value={suburb}  onChange={(e) => ClientDetails['Address']["Suburb"] = suburb}/>
+                  <input required name='UserPCode' placeholder='Post code' className='InputDetails' onChange={(e) => ClientDetails['Address']['PostCode'] = e.target.value} />
                   <input name='OrderRef' value={OrderRefNumber} style={{display:"none"}} />
                   <input name='ServicePrice' value={TotalCostService} style={{display:"none"}}/>
                   <input name='Cleantype' value={CleanDisplay} style={{display:"none"}}/>
                   <input name='CleanDetails' value={CleanInfoItems} style={{display:"none"}} />
-                  <input id='Details' value={Details.toString()} style={{display:"none"}} />
+                  <input name='Details[]' value={JSON.stringify(Details)} style={{display:"none"}} />
 
                   
                 </div>
