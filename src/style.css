@@ -288,17 +288,87 @@ section{
   width:-webkit-fill-available;
   padding-left: 250px;
 }
+.FooterLinkContain{
+display: flex;
+flex-direction: row;
+
+}
+.FooterLinkItemCon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.FootItemtitle{
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration-line: underline;
+}
+.FeqConItems{
+  display:flex;
+ justify-items: center;
+ flex-direction: column;
+}
 .FeqCon{
- display:grid;
+ display:flex;
  justify-items: flex-start;
+ flex-direction: column;
+ width: 700px;
+ border: 1px solid #2B3BCC;
+ border-radius: 5px;
+ margin: 10px;
 }
 .FeqTit{
 font-size: 18px;
 font-weight: 700;
+color: #FFFFFF;
+background-color: #394DFF;
+width: -webkit-fill-available;
+padding: 10px;
 }
 .FeqAns{
 font-size: 16px;
+padding: 10px;
+height: 30px;
 }
+.HIWContainer{
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+border: 1px #2B3BCC solid;
+overflow: hidden;
+width: 700px;
+margin: 10px;
+}
+.HIWTitle{
+padding: 10px;
+font-size: 18px;
+font-weight: 800;
+background-color: #394DFF;
+width: -webkit-fill-available;
+color: #FFFFFF;
+}
+.HIWText{
+padding: 10px;
+height: 50px;
+}
+.HIWTitleR{
+  text-align: right;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  background-color: #394DFF;
+  width: -webkit-fill-available;
+  color: #FFFFFF;
+  }
+  .HIWTextR{
+  text-align: right;
+  padding: 10px;
+  height: 50px;
+  }
+
+
+
 
   @media screen and (max-width: 699px) {
     h1, p {

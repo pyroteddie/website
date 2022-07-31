@@ -28,22 +28,37 @@ export default function HomeScreen() {
         <h1 className='HeadingTitle'>Why we are your best choice</h1>
           <div className='Sec2_Par'>
         <p>TSW Property Solutions is a family-run firm that was established in 2022. We make every effort to deliver the best service and customer care possible.
-          Our experienced expert cleaners are now serving Cairns and numerous surrounding areas.
-          We provide one-time cleanings, weekly cleanings, and bond cleanings. We also help NDIS recipients and veterans.We provide one-time cleanings, weekly cleanings, and bond cleanings. We have the knowledge and are delighted to assist you.</p>
+          Our experienced expert cleaners are now serving Cairns and numerous surrounding areas. We provide one-time cleanings, Yard work and bond cleanings. We have the knowledge and are delighted to assist you.</p>
           </div>
         </section>
 
         <section>
           <h1 className='HeadingTitle'>How Does it Work?</h1>
           <div>
-            <p></p>
+            <div className='HIWContainer'>
+              <a className='HIWTitle'>Select your needs</a>
+              <a className='HIWText'>Pick out of the 4 options to which would best suit your needs from our General or Deep Clean, 
+              Yard work, Bond clean or Build your own clean with our easy to use builder.</a>
+            </div>
+            <div className='HIWContainer'>
+              <a className='HIWTitleR'>Select Desired date and day</a>
+              <a className='HIWTextR'>Select your desired date and day and we will best try to suit those needs </a>
+            </div>
+            <div className='HIWContainer'>
+              <a className='HIWTitle'>Add any notes</a>
+              <a className='HIWText'>have any speical requirments? let us know and we will be happy to assist in anyway we can</a>
+            </div>
+            <div className='HIWContainer'>
+              <a className='HIWTitleR'>Book your service</a>
+              <a className='HIWTextR'>all thats left to do is add your details and press book now! One of our customer support officers will be in contact with you to confirm a time. </a>
+            </div>
+
+
           </div>
         </section>
 
         
-        <section className='Footer'> 
-        <a>A subsidiary of TSW Security Solutions</a>
-        </section>
+        
       </div>
     );
   }
