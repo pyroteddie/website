@@ -1,8 +1,8 @@
-import * as data from '../firebase'
 import React, { useState, useEffect } from 'react';
 import '../style/bookingStyle.css';
 import { Link} from "react-router-dom";
 
+import * as data from '../firebase'
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -49,12 +49,12 @@ const storage = getStorage();
       comments:""
       }                        
     let BaseRates = []
- 
     let CTDeepCleanItems = [];
     let CTGenCleanItems = [];
     let CTBondCleanItems  = [];
     var CleanInfoItems;
-let EachCustomItems = 0;
+    let EachCustomItems = 0;
+
     export default function BookingSection() {
     
     const [active, setActive] = useState(false);

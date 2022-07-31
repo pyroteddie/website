@@ -5,8 +5,8 @@ import FAQScreen from './screens/FAQ'
 import BookingScreen from './screens/priceBooking'
 import InfoScreen from './screens/info'
 import Header from './components/header'
-import AdminScreen from './screens/admin';
-
+import AdminSignOnScreen from './screens/adminSignOn';
+import SuccessPage from './screens/successPage';
 
 
 export default function AppMain() {
@@ -20,7 +20,8 @@ export default function AppMain() {
       <Route path="FAQ" element={< FAQScreen/>}/> 
       <Route path="Booking" element={< BookingScreen/>}/> 
       <Route path="Info" element={< InfoScreen/>}/> 
-      <Route path="admin" element={< AdminScreen/>}/> 
+      <Route path="adminSignOn" element={< AdminSignOnScreen/>}/> 
+      <Route path="Success" element={< SuccessPage/>}/> 
         
       </Routes>
     </div>
