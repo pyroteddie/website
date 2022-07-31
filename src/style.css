@@ -1,3 +1,6 @@
+body{
+  font-family: Lato;
+}
 h1, p {
   font-family: Lato;
 }
@@ -117,6 +120,10 @@ section{
 }
 .Footer{
   background-image: linear-gradient(135deg, rgb(1,136,211) 78%, rgb(0,79,136)78%);
+  position: sticky;
+  bottom: 0px;
+  display: grid;
+  width: -webkit-fill-available;
 }
 .GallerySection{
   background-color: rgba(196, 196, 196, 1);
@@ -214,6 +221,7 @@ section{
       height: 600px;
       justify-content: center;
       align-items: flex-start;
+      background-color: #b6b6b6
   }
   .PostCodeDiv{
     padding: 10px;
@@ -303,11 +311,18 @@ flex-direction: row;
   font-size: 16px;
   font-weight: 600;
   text-decoration-line: underline;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
+.FootItem:hover{
+  text-decoration-line: underline;
 }
 .FeqConItems{
-  display:flex;
+display:flex;
  justify-items: center;
  flex-direction: column;
+ height: 600px;
 }
 .FeqCon{
  display:flex;
@@ -385,7 +400,7 @@ height: 50px;
       padding: 10px;
     }
     .Sec2_Par{
-      width: 750px;
+      width: 350px;
       justify-self: center;
       align-self: center;
       display: flex;
@@ -437,8 +452,6 @@ height: 50px;
       font-size: 22px;
     }
     
-    
-    
     .ServiceItem_1, .ServiceItem_2, .ServiceItem_3{
       display: flex;
       background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FAssetPro.png?alt=media&token=e7c25339-2ae7-4f5e-bf3d-347c30246521) no-repeat left center;
@@ -450,11 +463,9 @@ height: 50px;
     }
     .ServiceItem_2{
       background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FDrug.png?alt=media&token=2314e038-280d-43ed-a847-d8b5ae62fdfa) no-repeat left center;
-     
     }
     .ServiceItem_3{
       background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FStatic.png?alt=media&token=e9fc2340-fbd1-48ad-8b74-df2288cfea16) no-repeat left center;
-    
     }
     
     .ServiceLabel{
@@ -471,7 +482,6 @@ height: 50px;
       text-decoration: underline;
       text-decoration-thickness: 2.5px;
     }
-    
     .ServicesSection{
       background-color: rgba(0, 79, 136, .05);
       border: 1.5px solid rgba(0, 55, 95, .25);
@@ -479,17 +489,16 @@ height: 50px;
       display: flex;
     flex-direction: row;
     }
-    
-    
-    body{ padding:0px;margin: 0px;}
-    
+    body{ 
+      padding:0px;
+      margin: 0px;
+    }
     section{
       min-height: 240px;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       display: flex;
-    
     }
     .Footer{
       background-image: linear-gradient(135deg, rgb(1,136,211) 78%, rgb(0,79,136)78%);
@@ -582,10 +591,9 @@ height: 50px;
       width: -webkit-fill-available;
       height: 5px;
       margin-top: 10px;
-      margin-bottom: 10px;}
-    
-    
-      .HeaderImg{
+      margin-bottom: 10px;
+    }
+    .HeaderImg{
         background: url(https://firebasestorage.googleapis.com/v0/b/tswpropertysolution.appspot.com/o/Untitled%20design.png?alt=media&token=3d4a95f6-382b-4b23-8bf9-04246d71155d) no-repeat center top;
           height: 400px;
           justify-content: center;
@@ -654,16 +662,117 @@ height: 50px;
         color:black;
         white-space: pre-wrap;
       }
+      .PostcodeSearch{
+        padding: 10px 10px 10px 10px;
+        width: 390px;
+        
+      }
+    .HeadingTitle{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+      padding-top: 10px;
+      padding-bottom:10px;
+      width:-webkit-fill-available;
+      padding-left: 20px;
+    }
+    .FooterLinkContain{
+    display: flex;
+    flex-direction: row;
+    
+    }
+    .FooterLinkItemCon{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+    .FootItemtitle{
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .FootItem:hover{
+      text-decoration-line: underline;
+    }
+    .FeqConItems{
+      display:flex;
+     justify-items: center;
+     flex-direction: column;
+     height: 600px;
+    }
+    .FeqCon{
+     display:flex;
+     justify-items: flex-start;
+     flex-direction: column;
+     width: 350px;
+     border-radius: 5px;
+     margin: 10px;
+    }
+    .FeqTit{
+    font-size: 18px;
+    font-weight: 700;
+    width: -webkit-fill-available;
+    padding: 10px;
+    }
+    .FeqAns{
+    font-size: 16px;
+    padding: 10px;
+    height: fit-content;
+    }
+    .HIWContainer{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 350px;
+    margin: 10px;
+    }
+    .HIWTitle{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    width: -webkit-fill-available;
+    }
+    .HIWText{
+    padding: 10px;
+    height: fit-content;
+    }
+    .HIWTitleR{
+      text-align: right;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      width: -webkit-fill-available;
+      }
+      .HIWTextR{
+      text-align: right;
+      padding: 10px;
+      height: fit-content;
+      }
 
   }
+
+
+
   @media screen and (min-width: 700px ) and (max-width: 1019px) {
     h1, p {
       font-family: Lato;
     }
-  
+    .Sec_1{
+      width: -webkit-fill-available;
+      justify-self: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 20px;
+      padding-left:30px ;
+      padding-right:30px ;
+      
+    }
     
     .Sec2_Par{
-      width: 750px;
+      width: -webkit-fill-available;
       justify-self: center;
       align-self: center;
       display: flex;
@@ -714,17 +823,7 @@ height: 50px;
       text-decoration: underline solid #394DFF;
       font-size: 22px;
     }
-    
-    .Sec_1{
-      width: 750px;
-      justify-self: center;
-      align-self: center;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      font-size: 20px;
-    }
-    
+     
     .ServiceItem_1, .ServiceItem_2, .ServiceItem_3{
       display: flex;
       background: url(https://firebasestorage.googleapis.com/v0/b/tswsecuritysolutions.appspot.com/o/MainPage%2FAssetPro.png?alt=media&token=e7c25339-2ae7-4f5e-bf3d-347c30246521) no-repeat left center;
@@ -779,6 +878,7 @@ height: 50px;
     }
     .Footer{
       background-image: linear-gradient(135deg, rgb(1,136,211) 78%, rgb(0,79,136)78%);
+     
     }
     .GallerySection{
       background-color: rgba(196, 196, 196, 1);
@@ -936,12 +1036,96 @@ height: 50px;
         white-space: pre-wrap;
       }
       .PostcodeSearch{
-        padding: 10px 10px 10px 250px;
+        padding: 10px 10px 10px 50px;
         width: 500px;
-        background-color: RGBA(255,255,255,.45);
+        
       }
-
+    .HeadingTitle{
+      box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+      padding-top: 10px;
+      padding-bottom:10px;
+      width:-webkit-fill-available;
+      padding-left: 20px;
+    }
+    .FooterLinkContain{
+    display: flex;
+    flex-direction: row;
+    
+    }
+    .FooterLinkItemCon{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+    .FootItemtitle{
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .FootItem:hover{
+      text-decoration-line: underline;
+    }
+    .FeqConItems{
+      display:flex;
+     justify-items: center;
+     flex-direction: column;
+     height: 600px;
+    }
+    .FeqCon{
+     display:flex;
+     justify-items: flex-start;
+     flex-direction: column;
+     width: 550px;
+     border-radius: 5px;
+     margin: 10px;
+    }
+    .FeqTit{
+    font-size: 18px;
+    font-weight: 700;
+    width: -webkit-fill-available;
+    padding: 10px;
+    }
+    .FeqAns{
+    font-size: 16px;
+    padding: 10px;
+    height: fit-content;
+    }
+    .HIWContainer{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 550px;
+    margin: 10px;
+    }
+    .HIWTitle{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    width: -webkit-fill-available;
+    }
+    .HIWText{
+    padding: 10px;
+    height: fit-content;
+    }
+    .HIWTitleR{
+      text-align: right;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      width: -webkit-fill-available;
+      }
+      .HIWTextR{
+      text-align: right;
+      padding: 10px;
+      height: fit-content;
+      }
   }
+
+
+
   @media screen and (min-width: 1020px ) and (max-width: 1440px) {
 h1, p {
       font-family: Lato;

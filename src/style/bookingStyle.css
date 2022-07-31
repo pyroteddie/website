@@ -268,9 +268,28 @@ h1, p {
     align-Items:flex-start;
   }
 
+
+
+
   @media screen and (max-width: 699px) {
     h1, p {
       font-family: Lato;
+    }
+
+    .InputCustItem{
+      width: 30px;
+      height: 20px;
+      border-radius: 2.5px;
+      border: 1px solid gray;
+    }
+    .CustomItem{
+      display: flex;
+      align-Items: center;
+      width: 350px;
+      justify-Content: space-between;
+      border-bottom: 1px solid #2B3BCC;
+      padding-bottom: 2px;
+      padding-top: 2px;
     }
     .BookNowButton {
       font-size: 18px;

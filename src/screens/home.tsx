@@ -36,20 +36,20 @@ export default function HomeScreen() {
           <h1 className='HeadingTitle'>How Does it Work?</h1>
           <div>
             <div className='HIWContainer'>
-              <a className='HIWTitle'>Select your needs</a>
+              <a className='HIWTitle'>1 ) Select your needs</a>
               <a className='HIWText'>Pick out of the 4 options to which would best suit your needs from our General or Deep Clean, 
               Yard work, Bond clean or Build your own clean with our easy to use builder.</a>
             </div>
             <div className='HIWContainer'>
-              <a className='HIWTitleR'>Select Desired date and day</a>
+              <a className='HIWTitleR'>2 ) Select Desired date and day</a>
               <a className='HIWTextR'>Select your desired date and day and we will best try to suit those needs </a>
             </div>
             <div className='HIWContainer'>
-              <a className='HIWTitle'>Add any notes</a>
+              <a className='HIWTitle'>3 ) Add any notes</a>
               <a className='HIWText'>have any speical requirments? let us know and we will be happy to assist in anyway we can</a>
             </div>
             <div className='HIWContainer'>
-              <a className='HIWTitleR'>Book your service</a>
+              <a className='HIWTitleR'>4 ) Book your service</a>
               <a className='HIWTextR'>all thats left to do is add your details and press book now! One of our customer support officers will be in contact with you to confirm a time. </a>
             </div>
 
