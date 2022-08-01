@@ -1,7 +1,7 @@
 {
   "name": "tswsecuritysolutions",
-  "homepage": "http://localhost:3000/",
-  "proxy": "http://localhost:4242",
+  "homepage": "https://tswpropertysolutions.com.au/",
+  "proxy": "https://tswpropertysolutions.com.au:4242",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
